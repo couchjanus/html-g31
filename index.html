@@ -4,14 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Document</title>
+    <style>
+          /*
+        .p2 {
+            color: rgb(255, 0, 0);
+        }
+        */
+         /* 0 1 2 3 4 5 6 7 8 9 a b c d e f */
+    </style>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"> -->
+     
+
+    <link href="css/main.css" rel="stylesheet">
 </head>
+
+
 <body>
-    <nav>
-        <!-- navigation -->
-        <a href="index.html">Home</a> 
-        <a href="about.html">About</a> 
-        <a href="contact.html">Contact</a> 
-    </nav>
+    <header class="page-header">
+        <a href="#!" class="brand fas fa-shopping-cart">&nbsp;Shopaholic</a>
+        <nav class="navbar" id="navbar">
+            <!-- navigation -->
+            <a href="index.html">Home</a> 
+            <a href="about.html">About</a> 
+            <a href="contact.html">Contact</a> 
+        </nav>
+        <nav class="toolbar">
+            <a href="#" class="far fa-heart"></a>
+            <a href="#" class="fas fa-dolly-flatbed"></a>
+            <a href="#" class="far fa-user"></a>
+        </nav>
+    </header>  
+
+    <section class="hero bg-cover bg-center py-5 mt-5" style="background: url(images/bg-banner.jpg);">
+        <div class="container py-5 px-4">
+            <p>New Inspiration 2024</p>
+            <h1>15% off on new season</h1>
+            <a href="" class="btn btn-primary">Browse collection</a>
+        </div>
+
+    </section>
+
+    <section id="catalog" class="catalog">
+        <header>
+            <h2>Our <span>Products</span></h2>
+        </header>
+        <div class="product-container">
+            <div class="product">
+                <div class="image">
+                    <img src="images/product-5.jpg">
+                </div>
+                <div class="content">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
     
 <h1>Hello world</h1>
 <!-- <h2>Hello world</h2>
@@ -22,25 +70,27 @@
 <h7>Hello world</h7>
 <mark>Hello world</mark>
 <span>Hello world</span> -->
-<p>Lorem ipsum dolor sit amet <b>consectetur</b> adipisicing elit. <i>Molestias</i> doloremque inventore blanditiis dolore commodi amet, quod ad culpa aperiam quaerat <span>laboriosam similique velit</span>. Sequi unde doloremque quis asperiores! Libero, accusamus.</p>
-<p>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. <em>Molestias</em> doloremque inventore blanditiis dolore commodi amet, quod ad culpa aperiam quaerat laboriosam similique velit. Sequi unde doloremque quis asperiores! Libero, accusamus.</p>
+<p class="p1">Lorem ipsum dolor sit amet <b>consectetur</b> adipisicing elit. <i>Molestias</i> doloremque inventore blanditiis dolore commodi amet, quod ad culpa aperiam quaerat <span>laboriosam similique velit</span>. Sequi unde doloremque quis asperiores! Libero, accusamus.</p>
+<p class="p2">Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. <em>Molestias</em> doloremque inventore blanditiis dolore commodi amet, quod ad culpa aperiam quaerat laboriosam similique velit. Sequi unde doloremque quis asperiores! Libero, accusamus.</p>
 <!-- comment -->
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aperiam ullam qui sit? Quos doloremque libero corrupti ratione perspiciatis rerum, officia minus obcaecati praesentium natus qui at quaerat molestiae voluptatem.</div>
-<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aperiam ullam qui sit? 
+<div class="test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aperiam ullam qui sit? Quos doloremque libero corrupti ratione perspiciatis rerum, officia minus obcaecati praesentium natus qui at quaerat molestiae voluptatem.</div>
+<div class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aperiam ullam qui sit? 
     <p>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. <em>Molestias</em> doloremque inventore blanditiis dolore commodi amet, quod ad culpa aperiam quaerat laboriosam similique velit. Sequi unde doloremque quis asperiores! Libero, accusamus.</p>
     
     Quos doloremque libero corrupti ratione perspiciatis rerum, officia minus obcaecati praesentium natus qui at quaerat molestiae voluptatem.</div>
 
-<footer>
-    <ul>
+<footer class="bg-dark text-white">
+    <ul class="list-unstyled">
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="about.html">About Us</a></li>
     </ul>
-    <ol>
+    <ol class="list-unstyled">
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="about.html">About Us</a></li>
     </ol>
-    <p>&copy; 2023 All rights reserved.</p>
+    <div class="border" style="border-color: black;">
+        <p>&copy; 2023 All rights reserved.</p>
+    </div>
 </footer>
 </body>
 </html>
