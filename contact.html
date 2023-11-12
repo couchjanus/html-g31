@@ -5,7 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="css/main.css" rel="stylesheet">
+
+
+<style>
+    .grid-container {
+        border: 2px red solid;
+    }
+
+    .box {
+        padding: 4rem;
+        color: white;
+    }
+    .box1 {
+        background-color: darkmagenta;
+    }
+    .box2 {
+        background-color: rgb(204, 124, 50);
+    }
+    .box3 {
+        background-color: green;
+    }
+    .box4 {
+        background-color: gold;
+    }
+    .box5 {
+        background-color: rgb(8, 0, 255);
+    }
+
+    .grid-container {
+        display: grid;
+         /*grid-template-columns: 200px 10% 1fr 1fr 5em;*/
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .grid-container-area {
+        display: grid;
+
+        grid-template-areas:
+        'h h h h'
+        's m m m'
+        'f f f f'
+        ;
+
+
+    }
+
+    .header {
+        grid-area: h;
+    }
+    .main {
+        grid-area: m;
+    }
+    .sidebar {
+        grid-area: s;
+    }
+    .footer {
+        grid-area: f;
+    }
+</style>
 </head>
+
 <body>
     <header class="page-header">
         <a href="#!" class="brand fas fa-shopping-cart">&nbsp;Shopaholic</a>
@@ -23,8 +83,56 @@
             <a href="#" class="far fa-user"></a>
         </nav>
     </header>  
+    <!-- breadcrumb -->
 
-    <h1>Contact Us</h1>
+    <section class="bg-light mb-3">
+        <div class="container py-5">
+            <div class="breadcrumb-container">
+                <div class="breadcrumb-title">Contact Us</div>
+                <ul class="breadcrum">
+                    <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Contact</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <div class="grid-container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+    
+    <div class="grid-container-area">
+        <div class="box box1 header">header</div>
+        <div class="box box2 main">main</div>
+        <div class="box box3 sidebar">sidebar</div>
+        <div class="box box4 footer">footer</div>
+        
+    </div> -->
+
+    <section class="py-5">
+        <div class="container">
+            <div class="contact-container">
+                <header class="contact-header">
+                    <h2>Contact Us</h2>
+                </header>
+                <div class="contact-main">
+                    Form here
+                </div>
+                <div class="contact-sidebar">
+                    Address
+                </div>
+                <div class="contact-footer">
+                    footer
+                </div>
+            </div>
+        </div>
+    </section>
+
 
    
 <footer class="">
