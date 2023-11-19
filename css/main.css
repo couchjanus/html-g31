@@ -99,7 +99,7 @@ color: white;
     font-size: 2.5rem;
 }
 
-.catalog header h2 span {
+header h2 span {
     color: salmon;
 }
 
@@ -207,16 +207,51 @@ footer h3 {
     white-space: nowrap;
 }
 
+footer form {
+    display: flex;
+    flex-wrap: wrap;
+}
+footer input[type="email"] {
+    border: 0;
+    padding: .625rem .9375rem;
+    margin-top: .315rem;
+}
 
+footer input[type="submit"] {
+    background-color: var(--active-color);
+    color: white;
+    border: 0;
+    padding: .625rem .9375rem;
+    margin-top: .315rem;
+}
+
+footer input[type="submit"]:hover {
+    background-color: white;
+    color: var(--active-color);
+    border: var(--active-color) 1px solid;
+}
+
+footer input[type="submit"]:hover > input[type="email"] {
+    border: var(--active-color) 1px solid;
+}
+
+.footer-legal-item li:nth-last-child(2) {
+    flex: 1;
+}
+
+.footer-social-list li a:hover {
+    color: var(--active-color);
+}
+
+footer ul.list-unstyled a:hover {
+    color: white;
+    font-weight: 600;
+} 
 /* navigation */
 
 
 .page-header {
     background-color: white;
-}
-
-.page-header {
-    background-color: #fff;
     padding: 2rem 9%;
     display: flex;
     align-items: center;
@@ -239,37 +274,66 @@ footer h3 {
 .page-header .navbar a {
     margin-left: 1rem;
 }
+.navbar a{
+    position: relative;
+}
+
+.navbar a:hover, .toolbar a:hover {
+    color: var(--active-color);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid var(--active-color);
+    transition:linear .4s;
+}
+.navbar a:hover::after {
+    width: 100%;
+}
 .brand {
     color: var(--active-color) !important;
 }
 
-@media (max-width: 900px) {
+
+#toggler, .page-header label {
+    display: none;
+}
+
+
+
+@media (max-width: 47rem) {
+    .page-header label {
+        display: inline-block;
+    }
+    .page-header {
+        display: flex;
+        justify-content: space-between !important; 
+    }    
     .navbar{
-        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 99%;
+        background-color: white;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
     .navbar a {
         display: block;
         margin: .5rem;
-
     }
-
-    .page-header {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+    #toggler:checked ~ nav.navbar{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 }
 
-
-.toolbar {
-
+#toggler {
+    display: none;
 }
 
-.brand {
-
-}
 
 .text-right {
     text-align: right;
@@ -303,6 +367,13 @@ footer h3 {
     object-fit: cover;
 }
 
+
+.product .icons {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    z-index: -10;
+}
  
 .product .icons a {
     display: block;
@@ -317,6 +388,19 @@ footer h3 {
     margin: 0;
 }
 
+.product:hover .icons {
+    z-index: 10;
+}
+
+.image img, .icons, ,icons a {
+    transition: ease .3s;
+}
+
+.product:hover .image img {
+    transform: scale(1.1);
+    /* transform:rotate(45deg); */
+    filter: brightness(90%);
+}
 
 .product .icons a:hover {
     color: #fff;
@@ -369,12 +453,12 @@ footer h3 {
 
 .contact-container {
     display: grid;
-    border: red 1px solid;
+    /* border: red 1px solid; */
     gap:1rem;
 }
 
 .contact-header {
-    border: gold 1px solid;
+    /* border: gold 1px solid; */
     grid-row: 1;
     grid-column: 1 / 4;
 }
@@ -382,7 +466,7 @@ footer h3 {
 .contact-main {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
-    border: green 1px solid;
+    /* border: green 1px solid; */
 }
 
 .contact-sidebar {
@@ -392,7 +476,7 @@ footer h3 {
 }
 
 .contact-footer {
-    border: magenta 1px solid;
+    /* border: magenta 1px solid; */
     grid-column: 1 / 4;
     grid-row: 4;
 }
@@ -445,13 +529,9 @@ footer h3 {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
-.product .icons {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-}
 
 .catalog-container {
     display: grid;
@@ -606,9 +686,6 @@ table {
     content: '$';
 }
 
-.navbar a:hover, .toolbar a:hover {
-    color: var(--active-color);
-}
 
 
 .form-control {
@@ -617,6 +694,8 @@ table {
     padding: .5rem 1rem;
     line-height: 1.5;
     background-color: #fff;
+    border: 1px solid #bbb;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
 }
 
@@ -631,8 +710,94 @@ table {
 
 .form-control:focus {
     background-color: #eed8a5;
-    border: #f00 solid 1px;
+    border-color: #f00;
+    box-shadow: 0 0 0 .25rem rgba(220, 177, 74, .25);
 }
 .form-control::placeholder {
     /* opacity: 1; */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* carousel */
+
+.carousel {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: center;
+}
+
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+}
+
+.category-item {
+    display: block;
+    position: relative;
+    
+}
+
+.category-item-title {
+    display: inline-block;
+    background-color: white;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #333;
+    transform: translate(-50%, -50%);
+    padding: .5em 1em;
+}
+
+.slide-track {
+    width: calc(250px * 14);
+    display: flex;
+    animation: carousel 40s infinite linear;
+}
+
+.slide img {
+    display: block;
+    height: 100px;
+    width: 250px;
+    object-fit: cover;
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider::before, .slider::after {
+    content: '';
+    height: 100%;
+    width: 200px;
+    z-index: 2;
+    position: absolute;
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
 }
