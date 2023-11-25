@@ -7,8 +7,11 @@
     <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
+
     <header class="page-header">
-        <a href="#!" class="brand fas fa-shopping-cart">&nbsp;Shopaholic</a>
+        <a href="#!" class="brand fas fa-shopping-cart">&nbsp;Shopaholic&nbsp;</a>
+        <label for="toggler" class="fas fa-bars"></label>
+        <input type="checkbox" id="toggler">
         <nav class="navbar" id="navbar">
             <!-- navigation -->
             <a href="index.html">Home</a> 
@@ -19,10 +22,11 @@
         </nav>
         <nav class="toolbar">
             <a href="#" class="far fa-heart"></a>
-            <a href="#" class="fas fa-dolly-flatbed"></a>
-            <a href="#" class="far fa-user"></a>
+            <a href="cart.html" class="fas fa-dolly-flatbed"></a>
+            <a href="#!" onclick="window.login.showModal();" class="far fa-user"></a>
         </nav>
     </header>  
+    
     <section class="bg-light mb-3">
         <div class="container py-5">
             <div class="breadcrumb-container">
@@ -31,6 +35,65 @@
                     <li class="breadcrumb-item"><a class="text-dark" href="index.html">Home</a></li>
                     <li class="breadcrumb-item active">Blog</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- blog-container -->
+
+    <section class="py-5 mb-3">
+        <div class="container">
+            <div class="container-blog mb-3">
+                <main>
+                    <div class="card card-shadow">
+                        <header class="card-header">
+                            <img src="images/product-5.jpg">
+                        </header>
+                        <div class="card-body">
+                            <h3>Lorem ipsum dolor sit</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis necessitatibus ullam laborum quis beatae earum delectus optio iusto amet vitae, libero nisi nemo nam exercitationem accusamus hic et nobis vel.</p>
+                            <button class="btn">Details</button>
+                            <button class="btn btn-outline">All tags</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <header class="card-header">
+                            <img src="images/product-7.jpg">
+                        </header>
+                        <div class="card-body">
+                            <h3>Lorem ipsum dolor sit</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis necessitatibus ullam laborum quis beatae earum delectus optio iusto amet vitae, libero nisi nemo nam exercitationem accusamus hic et nobis vel.</p>
+                            <button class="btn">Details</button>
+                            <button class="btn btn-outline">All tags</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <header class="card-header">
+                            <img src="images/product-6.jpg">
+                        </header>
+                        <div class="card-body">
+                            <h3>Lorem ipsum dolor sit</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis necessitatibus ullam laborum quis beatae earum delectus optio iusto amet vitae, libero nisi nemo nam exercitationem accusamus hic et nobis vel.</p>
+                            <button class="btn">Details</button>
+                            <button class="btn btn-outline">All tags</button>
+                        </div>
+                    </div>
+
+                </main>
+                <aside class="sidebar">
+                    <h2>Sidebar</h2>
+                    <div class="card card-shadow">
+                        <header class="card-header">
+                            <img src="images/product-5.jpg">
+                        </header>
+                        <div class="card-body">
+                            <h3>Lorem ipsum dolor sit</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis necessitatibus ullam laborum quis beatae earum delectus optio iusto amet vitae.</p>
+                            <button class="btn">Details</button>
+                            <button class="btn btn-outline">All tags</button>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </div>
     </section>
@@ -101,6 +164,8 @@
     </section>
     
 </footer>
+
+
 
     
 </body>

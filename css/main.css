@@ -801,3 +801,329 @@ table {
     top: 0;
     transform: rotateZ(180deg);
 }
+
+/* blog */
+.container-blog {
+    display: flex;
+    gap: 1rem;
+}
+
+.container-blog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-blog aside {
+    border-left: 1px dotted #ccc;
+    padding: .5rem 1rem;
+    flex: 1;
+}
+
+.container-blog main{
+    padding: .5rem;
+    flex: 3;
+}
+
+.container-blog main,
+.container-blog .sidebar {
+    container-type: inline-size;
+    container-name: sidebar;
+}
+
+.card {
+    display: flex;
+    flex-wrap: row;
+    border: 1px #ccc dotted;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.card-header {
+    max-width: 500px;
+    padding: 1rem;
+    margin: 0;
+}
+
+@container sidebar (max-width:45rem) {
+    .card {
+        flex-direction: column;
+    }
+    .card-header {
+        width: 100%;
+    }
+}
+
+@media (max-width: 45rem) {
+    .container-blog {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .container-blog main, .container-blog aside {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+.card-body p {
+    font-size: clamp(.9rem, .5cqi + 1rem, 1.5rem);
+}
+
+.card-body h3 {
+    font-size: clamp(1.25rem, 3cqi + 1rem, 2.5rem);
+}
+
+/* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    transition: all .4s;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 50%;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-dialog {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    padding: .5rem 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, .5);
+}
+
+.modal-body {
+    display: flex;
+    width: 100%;
+}
+
+.modal-body main {
+    flex: 1;
+    padding: .5rem;
+    width: 100%;
+}
+
+.modal-body aside {
+    flex: 1;
+    padding: .5rem;
+    width: 100%;
+}
+
+.modal-body aside img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.info-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.info-header {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.info-price {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.info-shipping {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.info-qty {
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+.info-butoon {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+.info-description {
+    grid-column: 1 / 3;
+    grid-row: 5;
+}
+
+.info-qty input[type='number'] {
+    max-width: 3.5rem;
+    height: 2.5rem;
+    border: 1px dotted lightgoldenrodyellow;
+}
+
+.info-qty input:in-range {
+    background-color: rgba(0, 255, 0, .25);
+}
+
+.info-qty input:out-of-range {
+    background-color: rgba(255, 0, 0, .25);
+    border-color: #f00;
+}
+
+.info-butoon a.btn {
+    display: inline-block;
+    padding: .5rem 1.2rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 30px;
+    color: white;
+    border: 1px solid white;
+    box-shadow: inset 0 0 0 0 white;
+    transition: .4s;
+}
+
+.info-butoon a.btn-submit {
+    width: 100%;
+    margin-top: 5px;
+    color: var(--active-color);
+    font-size: 1.4rem;
+    background: transparent;
+    border: 1px solid salmon;
+    box-shadow: inset 0 0 0 0 salmon;
+    border-radius: 30px;
+}
+
+.info-butoon a.btn-submit:hover {
+    color: white;
+    box-shadow: inset 260px 0 0 0 salmon;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    border: gray 1px solid;
+    transition: all .5s ease-out;
+    z-index: 10;
+    text-align: center;
+}
+
+.close:hover {
+    background-color: salmon;
+    border-color: salmon;
+    color: white;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* dialog */
+
+#login {
+    z-index: 10;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .5);
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 50%;
+}
+
+
+.login-container {
+    display: flex;
+}
+
+.login-container h2 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.login-container p {
+    margin: 0 0 20px 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.login-container main {
+    flex: 1;
+    padding: 1rem 1.5rem;
+}
+
+.login-text {
+    position: relative;
+    width: 100%;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+.login-text .btn {
+   display:inline-block ;
+   padding: .5rem 1.2rem;
+   font-size: 1.2rem;
+   letter-spacing: 1px;
+   text-decoration: none;
+   border-radius: 30px;
+   color: white;
+   border: 1px solid white;
+   box-shadow: inset 0 0 0 0 white;
+   transition: .4s;
+}
+
+.login-text .btn:hover {
+    color: salmon;
+    box-shadow: inset 150px 0 0 0 white;
+}
+.login-container aside {
+    flex: 1;
+
+    clip-path: polygon(0 0, 0 100%, 100% 0 );
+    background: linear-gradient(to right bottom, salmon 0%, white 100%);
+}
+
+.login-form {
+    position: relative;
+    width: 100%;
+}
+
+.login-form label {
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.login-form input {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.login-form input:focus {
+    border-color: #f00;
+}

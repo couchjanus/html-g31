@@ -54,7 +54,7 @@
         <nav class="toolbar">
             <a href="#" class="far fa-heart"></a>
             <a href="cart.html" class="fas fa-dolly-flatbed"></a>
-            <a href="#" class="far fa-user"></a>
+            <a href="#!" onclick="window.login.showModal();" class="far fa-user"></a>
         </nav>
     </header>  
 
@@ -176,7 +176,7 @@
                 <div class="icons">
                     <a href="#!" class="fas fa-shopping-cart"></a>
                     <a href="#!" class="fas fa-heart"></a>
-                    <a href="#!" class="fas fa-eye"></a>
+                    <a href="#productView" class="fas fa-eye"></a>
                 </div>
                 <div class="image">
                     <div class="badge text-white bg-sale">Sale</div>
@@ -192,7 +192,7 @@
                 <div class="icons">
                     <a href="#!" class="fas fa-shopping-cart"></a>
                     <a href="#!" class="fas fa-heart"></a>
-                    <a href="#!" class="fas fa-eye"></a>
+                    <a href="#productView" class="fas fa-eye"></a>
                 </div>
                 <div class="image">
                     <div class="badge text-white bg-sold">Sold</div>
@@ -208,7 +208,7 @@
                 <div class="icons">
                     <a href="#!" class="fas fa-shopping-cart"></a>
                     <a href="#!" class="fas fa-heart"></a>
-                    <a href="#!" class="fas fa-eye"></a>
+                    <a href="#productView" class="fas fa-eye"></a>
                 </div>
                 <div class="image">
                     <div class="badge text-white bg-sale">Sale</div>
@@ -240,7 +240,7 @@
                 <div class="icons">
                     <a href="#!" class="fas fa-shopping-cart"></a>
                     <a href="#!" class="fas fa-heart"></a>
-                    <a href="#!" class="fas fa-eye"></a>
+                    <a href="#productView" class="fas fa-eye"></a>
                 </div>
                 <div class="image">
                     <div class="badge text-white bg-new">New</div>
@@ -256,7 +256,7 @@
                 <div class="icons">
                     <a href="#!" class="fas fa-shopping-cart"></a>
                     <a href="#!" class="fas fa-heart"></a>
-                    <a href="#!" class="fas fa-eye"></a>
+                    <a href="#productView" class="fas fa-eye"></a>
                 </div>
                 <div class="image">
                     <div class="badge text-white bg-sale">Sale</div>
@@ -392,6 +392,64 @@
     
 </footer>
 
+<!-- modal -->
 
+<div class="modal" id="productView">
+    <div class="modal-dialog">
+        <a href="#!" class="close fas fa-times"></a>
+        <div class="modal-body">
+            <aside>
+                <img src="images/product-5.jpg">
+            </aside>
+            <main>
+                <div class="info-container">
+                    <header class="info-header"><h2>Product Title</h2></header>
+                    <div class="info-price">123</div>
+                    <div class="info-shipping">Free shipping</div>
+                    <div class="info-butoon"><a href="#!" class="btn btn-submit"><i class="fas fa-cart-plus"></i> Add to cart</a></div>
+                    <div class="info-qty">
+                        <input type="number" value="1" min="1" max="10">
+                    </div>
+                    <div class="info-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, cum praesentium beatae.</div>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+</div>
+
+<dialog id="login">
+    <div class="login-container">
+        <a href="#!" onclick="window.login.close();" class="close fas fa-times"></a>
+        <aside>
+            <div class="login-text">
+                <h2>Welcome back!</h2>
+                <p>Create Your account.<br>It's totally free!</p>
+                <a class="btn" href="#!">Sign Up</a>
+            </div>
+        </aside>
+        <main>
+            <div class="login-form">
+                <h2>Login</h2>
+                <form>
+                    <p>
+                        <label>Username or Email</label>
+                        <input placeholder="Username or Email">
+                    </p>
+                    <p>
+                        <label>Password</label>
+                        <input placeholder="Password" type="password">
+                    </p>
+                    <p>
+                        
+                        <input type="submit" value="Sign In">
+                    </p>
+                </form>
+            </div>
+
+        </main>
+    </div>
+</dialog>
 </body>
 </html>
